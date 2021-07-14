@@ -1,0 +1,39 @@
+	<html> 
+	<body> 
+	<div> 
+	<form action="login.php" method="POST"> 
+	<p>LOGIN FORM</p><br /> 
+	<p>USERNAME:</p> 
+	<input type="text" name="uname" ><br /> 
+	<p>PASSWORD:</p> 
+	<input type="password" name="pass" ><br /> 
+	<input type="submit" name="submit" value="Login"><br /> 
+	</form> 
+	</div> 
+	</body> 
+	</html> 
+	
+
+
+Login.php
+
+<?php
+
+$uname=$_POST["uname"];
+$pass=$_POST["pass"];
+$con=mysqli_connect("localhost","root","","test1");
+if(!$con){  
+  die('Could not connect: '.mysqli_connect_error());  
+}  
+echo 'Connected successfully<br/>';  
+
+$query="select * from users where USERNAME='$uname' and PASSWORD='$pass'";
+$records=mysqli_query($con,$query);
+if(mysqli_num_rows($records)>=1)
+{
+header("Location: success.html");
+}
+else{
+echo "wrong";
+}
+?>
