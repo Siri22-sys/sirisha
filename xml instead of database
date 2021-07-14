@@ -1,0 +1,48 @@
+FirstServlet.java
+Import  javax.servlet.http.*;  
+  
+public class SecondServlet extends HttpServlet {  
+public void doPost(HttpServletRequest request, HttpServletResponse response) throws                ServletException, IOException {  
+  
+    		response.setContentType("text/html");  
+    		PrintWriter out = response.getWriter();  
+
+		String n=request.getParameter("username");  
+    		String p=request.getParameter("userpass");  
+
+          
+		ServletConfig config = getServletConfig();
+		String name = config.getInitParameter(“username”);    		
+    		String pass = config.getInitParameter("password");  
+          
+		if(n.equals(name)&&p.equals(pass)){
+			out.println("Welcome "+n);  
+		} else{  
+        			out.println("Sorry username or password error");  
+        			RequestDispatcher rd=request.getRequestDispatcher("/index.html");  
+       			rd.include(request,response);  
+    		}  
+		
+	out.close();  
+}
+}
+
+Web.xml
+<web-app>
+	<servlet>
+		<servlet-name>SecondServlet</servlet-name>
+		<servlet-class>SecondServlet</servlet-class>
+		<init-param>  
+<param-name>username</param-name>  
+<param-value>admin</param-value>  
+</init-param>  
+<init-param>  
+<param-name>password</param-name>  
+<param-value>123456</param-value>  
+</init-param>  
+	<servlet>
+	<servlet-mapping>
+		<servlet-name>SecondServlet</servlet-name>
+		<url-pattern>/servlet2</ url-pattern >
+	</servlet-mapping>
+</web-app>
