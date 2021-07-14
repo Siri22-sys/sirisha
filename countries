@@ -1,0 +1,71 @@
+             <html>
+	<script type="text/javascript">
+		function getcapital()
+		{
+			var x;
+			x=parseInt(document.getElementById("c").value);
+			switch(x)
+			{
+				case 1:document.getElementById("cc").value="New Delhi";
+				break;
+				case 2:document.getElementById("cc").value="Mascow";
+				break;
+				case 3:document.getElementById("cc").value="Nairobi";
+				break;
+				case 4:document.getElementById("cc").value="Beizing";
+				break;
+				case 5:document.getElementById("cc").value="Koulalumpur";
+				break;
+				case 6:document.getElementById("cc").value="Berlin";
+				break;
+				case 7:document.getElementById("cc").value="Athens";
+				break;
+				case 8:document.getElementById("cc").value="Toky0";
+				break;
+				case 9:document.getElementById("cc").value="Kuala Lumpur";
+				break;
+				case 10:document.getElementById("cc").value="Male";
+				break;
+			}
+		}
+	</script>
+	<head>
+		<style>
+		*{
+			text-align:center;
+			color:Black;
+			background-color:lightblue;
+			font-size:30px;
+		}
+		</style>
+	</head>
+	<body>
+		<form name="f1" method="POST()" >
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+			<center>Choose Country:<select id="c" name="c" onChange=getcapital()>
+				<option> Choose a Country </option>
+				<option value="1">India</option>
+				<option value="2">Russia</option>
+				<option value="3">Kenya</option>
+				<option value="4">China</option>
+				<option value="5">Singapur</option>
+				<option value="6">Germany</option>
+				<option value="7">Greece</option>
+				<option value="8">Japan</option>
+				<option value="9">Malaysia</option>
+				<option value="10">Maldives</option></center>				
+			</select>
+			<br/>
+			<br/>
+			<center>Capital:<input type="label" id="cc" name="cc" width="30"/></center>
+		</form>
+	</body>
+</html>
