@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT bookstore (book+)>
+<!ELEMENT book (title,author,ISBN,publisher,edition,price)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT ISBN (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT edition (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+
+ii) Write a XSD to validate the above XML file
+
+<bookstore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="C:\Users\ramanji\Desktop\AR - 15 WT\Prog4\2\bookstore.xsd">
+            <book>
+                        <title>web programming</title>
+                        <author>chrisbates</author>
+                        <ISBN>123-456-789</ISBN>
+                        <publisher>wiley</publisher>
+                        <edition>3</edition>
+                        <price>350</price>
+            </book>
+            <book>
