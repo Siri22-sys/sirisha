@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>wt lab experiment -3</title>
+<script type="text/javascript">
+var cnt;
+function wordcount(count)
+{
+var words=count.split(/\s/);
+var lines=count.split("\n").length;
+cnt  = words.length;
+document.getElementById('w_count').value=cnt;
+document.getElementById('c_count').value=count.length;
+document.getElementById('i_count').value=lines;
+}
+</script>
+</head>
+<body>
+<pre><b>
+Input Box:<textarea name="ta" rows="10" cols="30" 
+onkeyup="wordcount(this.value)"></textarea>
+<br>
+NO of words:<input type="text" id="w_count" size="4" readonly><br>
+<br>No of characters:<input type="text" id="c_count" size="4" readonly>
+<br>
+No. of Lines:<input type="text" id="i_count" size="4" readonly><br>
+</b>
+</pre>
+</body>
+</html>  
+                    
+
